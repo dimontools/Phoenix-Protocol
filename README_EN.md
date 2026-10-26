@@ -1,5 +1,7 @@
 # 🔥 Phoenix Codec
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1S6DNgPe6Chqtrn1QVrrJhx8BiVWbzV22?usp=sharing)
+
 **Experimental multimedia codec for extreme low-bandwidth and poor network conditions.**
 
 [🇷🇺 Русская версия](README.md)
