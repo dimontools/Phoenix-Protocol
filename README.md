@@ -1,5 +1,7 @@
 # 🔥 Phoenix Codec (Кодекс Феникс)
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1S6DNgPe6Chqtrn1QVrrJhx8BiVWbzV22?usp=sharing)
+
 **Экспериментальный мультимедийный кодек для экстремально низких битрейтов и плохих каналов связи.**
 
 [English version](README_EN.md)
