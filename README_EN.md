@@ -85,7 +85,8 @@ Requires Python 3.10+ and libraries `torch`, `compressai`, `encodec`, `opencv-py
 We want to be transparent. Phoenix is a **research protocol**, not a production-ready product. Here are its key limitations:
 
 1.  **Model dependency:** Decoding requires pre-installed CompressAI (Hyperprior) and EnCodec models. Their size (~50 MB) is not included in the claimed bitrate but must be present on the receiver.
-2.  **Seed mechanism:** Noise reconstruction via seed works if the noise profile is **known and deterministic** (e.g., channels with predictable interference). For random noise, a trained denoiser is required (in development).
+2.  **Seed mechanism (Main Limitation):** Noise reconstruction via seed works if the noise profile is **known and deterministic** (e.g., channels with predictable interference or a shared key). 
+    *   **For random noise** (as in real radio channels), this method **does not work**. Experiments with a generative denoiser (Stable Diffusion) showed that general-purpose models fail on strong random noise in the latent space (they "hallucinate" textures instead of reconstructing the object). Real channels require a **specifically trained denoiser** (U-Net), which is beyond the scope of this MVP.
 3.  **Resolution:** The codec operates on 256×256 latents. For 4K, padding is used, which may reduce detail. This is an architectural limitation, not a feature.
 4.  **Delay and echo:** The video call prototype (`phoenix_call.py`) has ~1 sec delay and echo. AEC (Acoustic Echo Cancellation) integration is required.
 5.  **Not production-ready:** The project has not been tested on real channels with BER (Bit Error Rate). All results are from synthetic simulations.
