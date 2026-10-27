@@ -38,6 +38,19 @@ Test on a real photo (256x256, face). PSNR is a pixel-accuracy metric (higher is
 
 **Conclusion:** Phoenix is 3.8x smaller than JPEG-90 and 2.2x smaller than AVIF. It loses to top neural codecs (Cheng2020) in PSNR, but **wins in noise resilience** (proven in `phoenix_space.py`) and **works at 500 bytes** (Quality=1), where classical codecs collapse.
 
+### 🖼️ Visual Comparison
+
+**1. Ideal Channel (no noise):**
+
+![Codec comparison in ideal channel](examples/comparison_grid.jpg)
+
+**2. Noisy Channel (2% packet loss):**
+
+![Codec comparison in noisy channel](examples/comparison_noisy_grid.jpg)
+
+*Pinecone photo: Derek Ramsey (Ram-Man), GFDL 1.2, via Wikimedia Commons.*
+*Yuri Gagarin photo: Mos.ru, CC BY 4.0, via Wikimedia Commons.*
+
 ## 🛠 How It Works (Briefly)
 
 1.  **Video:** Frame -> neural encoder (CompressAI / Hyperprior) -> compact latent.
